@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+Inventory
+{% endblock title %}
+
+
+{% block body %}
+<div  class="jumbotron">
+    <h1>Product</h1>
+</div>
+
+<div>
+    <table class="table table-striped">
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Product
+            </th>
+            <th>
+                Company
+            </th>
+            <th>
+                Cost Price
+            </th>
+            <th>
+                Edit
+            </th>
+            <th>
+                Delete
+            </th>
+        </tr>
+        
+        {% for d in dataset %}
+        <tr>
+            <td>
+                {{d.id}}
+            </td>
+
+            <td>
+            {{d.name}}
+            </td>
+
+            <td>    
+            {{d.company}}
+            </td>
+ 
+            <td>
+            {{d.cost_price}}
+            </td>
+            
+            <td>    
+            <a href="" class="btn btn-primary">Edit </a>
+            </td>
+ 
+            <td>
+            <a href="#" class="btn btn-danger">Delete </a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock body %}
